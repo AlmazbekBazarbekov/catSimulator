@@ -1,8 +1,9 @@
 package utils;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import models.cat;
+import models.Cat;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -13,21 +14,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class catCollection {
-    private static Gson gson = new Gson();
+    private static Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-    public static List<cat> readCats (String filename) throws IOException {
+    public static List<Cat> readCats (String filename) throws IOException {
         Path path = Paths.get(filename);
         String read = Files.readString(path);
-        Type listType = new TypeToken<List<cat>>(){}.getType();
+        Type listType = new TypeToken<List<Cat>>(){}.getType();
 
-        List<cat> cats = gson.fromJson(read, listType);
+        List<Cat> Cats = gson.fromJson(read, listType);
 
-        return cats != null ? cats : new ArrayList<>();
+        return Cats != null ? Cats : new ArrayList<>();
     }
 
-    public static void writeCats (List<cat> cats, String filename) throws IOException {
+    public static void writeCats (List<Cat> Cats, String filename) throws IOException {
         Path path = Paths.get(filename);
-        String write = gson.toJson(cats);
+        String write = gson.toJson(Cats);
         Files.write(path, write.getBytes());
     }
 

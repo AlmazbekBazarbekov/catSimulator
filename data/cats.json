@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Musya",
+    "age": 1,
+    "hunger": 50,
+    "mood": 50,
+    "health": 50,
+    "average": 50
+  },
+  {
+    "name": "Pusya",
+    "age": 9,
+    "hunger": 50,
+    "mood": 50,
+    "health": 50,
+    "average": 50
+  },
+  {
+    "name": "Almaz",
+    "age": 10,
+    "hunger": 75,
+    "mood": 75,
+    "health": 75,
+    "average": 75
+  },
+  {
+    "name": "Amina",
+    "age": 5,
+    "hunger": 30,
+    "mood": 30,
+    "health": 30,
+    "average": 30
+  },
+  {
+    "name": "Susya",
+    "age": 2,
+    "hunger": 40,
+    "mood": 40,
+    "health": 40,
+    "average": 40
+  },
+  {
+    "name": "Jusya",
+    "age": 4,
+    "hunger": 29,
+    "mood": 68,
+    "health": 25,
+    "average": 40
+  }
+]

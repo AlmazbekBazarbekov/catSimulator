@@ -1,6 +1,8 @@
 package models;
 
-public class cat {
+import java.util.Random;
+
+public class Cat {
     private String name;
     private int age;
     private int hunger;
@@ -8,14 +10,14 @@ public class cat {
     private int health;
     private int average;
 
-    private static final int DEFAULT = 50;
 
-    public cat(String name, int age) {
+
+    public Cat(String name, int age) {
         this.name = name;
         this.age = age;
-        this.hunger = DEFAULT;
-        this.mood = DEFAULT;
-        this.health = DEFAULT;
+        this.hunger = setRandomValue();
+        this.mood = setRandomValue();
+        this.health = setRandomValue();
         this.average = (hunger + mood + health) / 3;
     }
 
@@ -59,8 +61,16 @@ public class cat {
         this.age = age;
     }
 
-    @Override
-    public String toString() {
-        return String.format("%-5s |, %s |, %s |, %s |, %s |", name, age, hunger, mood, health, average);
+    public int getAverage() {
+        return average;
+    }
+
+    public void setAverage(int average) {
+        this.average = average;
+    }
+
+    private int setRandomValue() {
+        Random rand = new Random();
+        return rand.nextInt(20, 80);
     }
 }
